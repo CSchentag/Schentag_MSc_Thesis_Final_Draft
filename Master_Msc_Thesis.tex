@@ -1,0 +1,167 @@
+\documentclass[12pt]{uofsthesis-cs}
+\usepackage{graphicx} % For images
+% \usepackage{subfigure} % For side by side images
+\usepackage{textcomp} % To use the degree symbol with unicode
+\usepackage{textgreek} % To use Greek letters outside of math mode
+\usepackage{mathrsfs} % For fancy letters, such as the curvy R for responsivity
+\usepackage[table]{xcolor} % for table shading
+\usepackage{amsmath, bm} % for matrices and bolding math
+\usepackage[round]{natbib} % For references
+\usepackage{subcaption}
+\usepackage{caption}
+
+\newcommand{\Int}{\int\limits} % For double integrals
+
+% Documentation for the uofsthesis-cs class is given in uofsthesis-cs.dvi
+% 
+% It is recommended that you read the CGSR thesis preparation
+% guidelines before proceeding.
+% They can be found at http://www.usask.ca/cgsr/thesis/index.htm
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FRONTMATTER - In this section, specify information to be used to
+% typeset the thesis frontmatter.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% THESIS TITLE
+\title{Thermal-Mechanical Design and Detector Characterization of the Limb Imaging Fourier Transform Spectrometer Experiment}
+
+% AUTHOR'S NAME
+\author{Connor J. Schentag}
+
+% DEGREE SOUGHT.  
+\degree{\MSc}         
+
+% THESIS DEFENCE DATE
+% Should be month/year, e.g. July 2004
+\defencedate{May/2020}
+
+% NAME OF ACADEMIC UNIT
+\department{Physics \& Engineering Physics}
+
+% PERMISSION TO USE ADDRESS
+\ptuaddress{Head of the Department of Physics \& Engineering Physics\\
+163 Physics Building, 116 Science Place\\
+University of Saskatchewan\\
+Saskatoon, Saskatchewan, 57N 5E2, Canada\\
+
+OR\\
+
+Dean\\
+College of Graduate and Postdoctoral Studies\\
+University of Saskatchewan\\
+116 Thorvaldson Building, 110 Science Place\\
+Saskatoon, Saskatchewan, S7N 5C9, Canada
+}
+
+% ABSTRACT
+\abstract{
+The Limb Imaging Fourier Transform Experiment (LIFE) is a prototype of a satellite remote sensing instrument being developed at the University of Saskatchewan in collaboration with the Canadian Space Agency and ABB Inc. The prototype instrument is designed to take measurements of key atmospheric greenhouse gases on-board a high-altitude balloon gondola, to test the concept and provide insight towards future versions of the instrument. It will take measurements from the stratosphere, providing a vertical profile from the lower stratosphere to the upper troposphere, known as the UTLS region, an important region for understanding climate change. LIFE is conceptually similar to the Gimballed Limb Observer for Radiance Imaging in the Atmosphere (GLORIA), and aims to create a less expensive and smaller instrument to show that a cost-effective infrared Fourier Transform Spectrometer based atmospheric instrument is feasible.
+
+This thesis describes two main aspects of the LIFE prototype: The thermal-mechanical design and the characterization of the infrared detector. As a thermal imaging instrument, LIFE has strict thermal requirements and constraints in the harsh high-altitude environment. A thermal-mechanical design is developed and simulated to ensure that all requirements are met and the instrument will operate nominally during its high-altitude balloon flight. The infrared detector must be carefully characterized and optimized for the LIFE application through the altering and optimization of detector settings, to ensure that the measurements taken are of the best possible quality.
+
+The instrument successfully flew on its first test flight in Timmins, Ontario in August of 2019. All design requirements were met and the instrument operated nominally, taking numerous successful measurements of the UTLS. The goal of creating a design that would allow the survival and operation of the instrument in a high-altitude environment as well as the goal of optimizing the detector were both completed successfully. Overall, the goal of creating a low cost instrument that allows thermal emission measurements to be taken in the UTLS region was completed, and the knowledge gained from the project can be used to inform future improvements to the LIFE instrument.
+}
+
+% THESIS ACKNOWLEDGEMENTS -- This can be free-form.
+\acknowledgements{
+I would first like to offer my deepest thanks to my supervisors, Doug Degenstein and Adam Bourassa. They brought me onto the LIFE team and gave me a project that I felt very proud to be part of. Their help and support through this thesis and through the development of LIFE has been greatly appreciated.
+
+I would also like to thank the rest of the members of the LIFE team, Paul Loewen, Jeff Langille, Ethan Runge, and Daniel Letros. They made working on LIFE even better than it would have been alone. Spending long hours building with Paul, figuring out the detector with Jeff, and hanging out in both the lab and in Timmins with Ethan and Daniel was always fun, even if we were in the midst of a LIFE crisis. This thanks extends to all fellow members of ISAS and the Atmospheric Research Group, who provided a very welcoming environment that I loved being part of.
+
+Finally, I thank my family and friends for supporting me through this project, for never complaining after hearing me talk about all the bolts in my mechanical design for hours.
+}
+
+% THESIS DEDICATION -- Also free-form.  If you don't want a dedication, comment out the following
+% line.
+% \dedication{I dedicate this to my cat, Chester. Thanks for always being there to distract me from getting stuff done.}
+
+% LIST OF ABBREVIATIONS
+\loa{
+\abbrev{ACE}{Atmospheric Chemistry Experiment}
+\abbrev{CAD}{Computer Assisted Design}
+\abbrev{CATS}{Canadian Atmospheric Tomography System}
+\abbrev{CSA}{Canadian Space Agency}
+\abbrev{CNES}{National Centre for Space Studies}
+\abbrev{FEA}{Finite Element Analysis}
+\abbrev{FOV}{Field of View}
+\abbrev{FTS}{Fourier Transform Spectrometer}
+\abbrev{GLORIA}{Gimballed Limb Observer for Radiance Imaging of the Atmosphere}
+\abbrev{IFTS}{Imaging Fourier Transform Spectrometer}
+\abbrev{IR}{Infrared}
+\abbrev{LOF}{List of Figures}
+\abbrev{LOS}{Line of Sight}
+\abbrev{LOT}{List of Tables}
+\abbrev{LIFE}{Limb Imaging Fourier Transform Spectrometer Experiment}
+\abbrev{MCT/HgCdTe}{Mercury Cadmium Telluride}
+\abbrev{MIPAS}{Michelson Interferometer for Passive Atmospheric Sounding}
+\abbrev{SPARC}{Stratosphere-troposphere Processes And their Role in Climate}
+\abbrev{STE}{Stratosphere-Troposphere Exchange}
+\abbrev{TVAC}{Thermal Vacuum Chamber}
+\abbrev{UTLS}{Upper Troposphere - Lower Stratosphere}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% END OF FRONTMATTER SECTION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+% Typeset the title page
+\maketitle
+
+% Typeset the frontmatter.  
+\frontmatter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% MAIN CHAPTERS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input chap1_intro.tex % Introduction
+\input chap2_bg.tex % Background
+\input chap3_thermal_mech.tex % Thermal-Mechanical Design
+\input chap4_postflight.tex
+\input chap5_detector.tex % Detector Characterization
+\input chap6_future.tex % Future Work
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The Bibliograpy should go here. BEFORE appendices!
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Typeset the Bibliography.  The bibliography style used is "plain".
+% Optionally, you can specify the bibliography style to use:
+% \uofsbibliography[stylename]{yourbibfile}
+
+\uofsbibliography[plainnat]{references.bib}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% APPENDICES
+%
+% Any chapters appearing after the \appendix command get numbered with
+% capital letters starting with appendix 'A'.
+% New chapters from here on will be called 'Appendix A', 'Appendix B'
+% as opposed to 'Chapter 1', 'Chapter 2', etc.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Activate thesis appendix mode.
+\uofsappendix
+
+% Put appendix chapters in the appendices environment so that they appear correctly
+% in the table of contents.  You can use \input's here as well.
+\begin{appendices}
+
+\input appendices.tex
+
+\end{appendices}
+
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%% Helpful Latex notes %%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% {Placing a figure in the correct location}
+% h (here) - same location
+% t (top) - top of page
+% b (bottom) - bottom of page
+% p (page) - on an extra page
+% ! (override) - will force the specified location
